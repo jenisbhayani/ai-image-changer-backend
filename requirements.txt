@@ -1,0 +1,9 @@
+fastapi>=0.115.0
+uvicorn[standard]>=0.32.0
+python-multipart>=0.0.18
+pydantic>=2.10.0
+pydantic-settings>=2.6.0
+requests>=2.31.0
+pillow>=10.4.0
+gradio_client>=2.7.0
+gradio>=4.0.0
