@@ -22,6 +22,9 @@ class PassportAnalysisService:
         self._detector: Optional[cv2.FaceDetectorYN] = None
 
     def _get_detector(self, width: int, height: int) -> Optional[cv2.FaceDetectorYN]:
+        if not os.path.exists(self._model_path) or os.path.getsize(self._model_path) < 100_000:
+            from app.services.model_registry import ensure_yunet_weights
+            ensure_yunet_weights()
         if not os.path.exists(self._model_path):
             return None
         if self._detector is None:

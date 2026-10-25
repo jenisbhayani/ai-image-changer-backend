@@ -26,6 +26,9 @@ RUN pip install --no-cache-dir --upgrade pip && \
 # Copy application source code
 COPY --chown=user:user app/ ./app
 
+# Pre-download model weights during build so the container boots instantly with 0 cold-start latency
+RUN python -c "from app.services.model_registry import ensure_isnet_weights, ensure_yunet_weights; ensure_isnet_weights(); ensure_yunet_weights()"
+
 # Expose Hugging Face Space default port
 EXPOSE 7860
 

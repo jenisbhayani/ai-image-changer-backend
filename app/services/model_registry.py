@@ -21,8 +21,11 @@ Quality Tiers:
 import io
 import logging
 import os
+import shutil
+import tempfile
 import threading
 import time
+import urllib.request
 from typing import Any, Dict, List, Optional, Tuple
 
 import cv2
@@ -40,6 +43,57 @@ WEIGHTS_DIR = os.path.join(BASE_DIR, "models", "weights")
 
 ISNET_PATH = os.path.join(WEIGHTS_DIR, "isnet-general-use.onnx")
 RMBG_PATH = os.path.join(WEIGHTS_DIR, "rmbg-1.4.onnx")
+YUNET_PATH = os.path.join(WEIGHTS_DIR, "face_detection_yunet_2023mar.onnx")
+
+ISNET_URL = "https://github.com/danielgatis/rembg/releases/download/v0.0.0/isnet-general-use.onnx"
+YUNET_URL = "https://github.com/opencv/opencv_zoo/raw/main/models/face_detection_yunet/face_detection_yunet_2023mar.onnx"
+
+
+def download_file_with_retry(url: str, dest_path: str, min_expected_bytes: int = 100_000) -> bool:
+    """
+    Downloads model weight binary from public release URL if not present or corrupt.
+    Uses tempfile and atomic rename to prevent partially-downloaded corruptions.
+    """
+    os.makedirs(os.path.dirname(dest_path), exist_ok=True)
+    if os.path.exists(dest_path) and os.path.getsize(dest_path) >= min_expected_bytes:
+        return True
+
+    logger.info(f"Downloading model weights from {url} to {dest_path}...")
+    temp_dir = tempfile.gettempdir()
+    temp_file = os.path.join(temp_dir, f"tmp_{os.path.basename(dest_path)}")
+    try:
+        req = urllib.request.Request(
+            url,
+            headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AI-Image-Changer-Deployer"},
+        )
+        with urllib.request.urlopen(req, timeout=180) as resp, open(temp_file, "wb") as f_out:
+            shutil.copyfileobj(resp, f_out)
+
+        actual_size = os.path.getsize(temp_file)
+        if actual_size < min_expected_bytes:
+            raise RuntimeError(f"Downloaded weight size {actual_size} bytes is below threshold {min_expected_bytes}")
+
+        shutil.move(temp_file, dest_path)
+        logger.info(f"Successfully cached model weights to {dest_path} ({actual_size} bytes)")
+        return True
+    except Exception as e:
+        logger.error(f"Failed to auto-download model weights from {url}: {e}")
+        if os.path.exists(temp_file):
+            try:
+                os.remove(temp_file)
+            except Exception:
+                pass
+        return False
+
+
+def ensure_isnet_weights() -> bool:
+    """Ensures IS-Net ONNX model is available locally for background removal."""
+    return download_file_with_retry(ISNET_URL, ISNET_PATH, min_expected_bytes=100_000_000)
+
+
+def ensure_yunet_weights() -> bool:
+    """Ensures OpenCV YuNet face detector model is available locally for passport cropping."""
+    return download_file_with_retry(YUNET_URL, YUNET_PATH, min_expected_bytes=100_000)
 
 
 def letterbox_image(
@@ -100,6 +154,8 @@ class ModelRegistry:
 
             if model_key == "isnet":
                 model_path = ISNET_PATH
+                if not os.path.exists(model_path) or os.path.getsize(model_path) < 100_000_000:
+                    ensure_isnet_weights()
             elif model_key == "rmbg":
                 model_path = RMBG_PATH
             else:

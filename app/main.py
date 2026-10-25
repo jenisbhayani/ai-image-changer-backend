@@ -1,3 +1,4 @@
+from contextlib import asynccontextmanager
 import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -5,11 +6,28 @@ from fastapi.responses import FileResponse, HTMLResponse
 from app.api import background, edit, enhance, health, upscale
 from app.core.config import settings
 
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Starts model weights warm-up in a background thread so the server binds ports immediately."""
+    import threading
+    from app.services.model_registry import ensure_isnet_weights, ensure_yunet_weights
+
+    def _warmup():
+        ensure_isnet_weights()
+        ensure_yunet_weights()
+
+    thread = threading.Thread(target=_warmup, daemon=True)
+    thread.start()
+    yield
+
+
 app = FastAPI(
     title=settings.PROJECT_NAME,
     version=settings.VERSION,
     docs_url="/docs",
-    redoc_url="/redoc"
+    redoc_url="/redoc",
+    lifespan=lifespan,
 )
 
 # CORS middleware to allow requests from mobile app and development tools
