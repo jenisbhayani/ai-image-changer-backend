@@ -20,8 +20,8 @@ class Settings(BaseSettings):
     # Maximum upload size in bytes (15 MB default)
     MAX_UPLOAD_SIZE_BYTES: int = 15 * 1024 * 1024
 
-    # Maximum image dimension for pre-processing (downscale if larger)
-    MAX_IMAGE_DIMENSION: int = 2048
+    # Maximum image dimension for pre-processing (downscale if larger to protect free-tier memory)
+    MAX_IMAGE_DIMENSION: int = 1280
 
     # Allowed CORS origins
     ALLOWED_ORIGINS: List[str] = ["*"]

@@ -167,17 +167,23 @@ class ModelRegistry:
                 return None
 
             try:
-                logger.info(f"Initializing ONNX session for {model_key} from {model_path}...")
+                logger.info(f"Initializing low-memory ONNX session for {model_key} from {model_path}...")
                 sess_options = ort.SessionOptions()
-                sess_options.intra_op_num_threads = min(4, os.cpu_count() or 2)
-                sess_options.graph_optimization_level = ort.GraphOptimizationLevel.ORT_ENABLE_ALL
+                # Optimized for 512MB containers (Render Free Tier):
+                # 1. Disable pre-allocated memory arena to prevent hoarding buffer RAM
+                sess_options.enable_cpu_mem_arena = False
+                # 2. Limit thread concurrency to 1 to eliminate multi-threaded activation memory duplication
+                sess_options.intra_op_num_threads = 1
+                sess_options.inter_op_num_threads = 1
+                sess_options.execution_mode = ort.ExecutionMode.ORT_SEQUENTIAL
+                sess_options.graph_optimization_level = ort.GraphOptimizationLevel.ORT_ENABLE_BASIC
                 session = ort.InferenceSession(
                     model_path,
                     sess_options=sess_options,
                     providers=["CPUExecutionProvider"],
                 )
                 self._sessions[model_key] = session
-                logger.info(f"ONNX session {model_key} ready.")
+                logger.info(f"ONNX session {model_key} ready (low-memory mode).")
                 return session
             except Exception as e:
                 logger.error(f"Failed to load {model_key} session: {e}")
@@ -253,8 +259,9 @@ class BackgroundRemovalService:
         orig_w, orig_h = pil_img.size
         rgb_img = pil_img.convert("RGB")
 
-        # Cap memory for high-res images (>2048px)
-        max_dim = 2048 if quality_tier == "balanced" else (3000 if quality_tier == "high" else 1536)
+        # Cap memory for high-res images to protect 512MB RAM ceiling
+        configured_max = getattr(settings, "MAX_IMAGE_DIMENSION", 1280)
+        max_dim = min(configured_max, 1280 if quality_tier == "balanced" else (1536 if quality_tier == "high" else 1024))
         scale = min(1.0, max_dim / max(orig_w, orig_h))
         if scale < 1.0:
             work_w, work_h = int(orig_w * scale), int(orig_h * scale)
@@ -346,7 +353,13 @@ class BackgroundRemovalService:
             "processing_ms": round(elapsed_ms, 1),
         }
 
-        return out_buf.getvalue(), metadata
+        output_bytes = out_buf.getvalue()
+        # Free memory immediately to keep memory profile low
+        del clean_rgba, out_buf, final_alpha_arr
+        import gc
+        gc.collect()
+
+        return output_bytes, metadata
 
 
 _inference_service: Optional[BackgroundRemovalService] = None

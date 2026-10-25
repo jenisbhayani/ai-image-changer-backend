@@ -1,6 +1,7 @@
 import asyncio
 import base64
 import io
+import os
 from typing import Optional
 from fastapi import APIRouter, File, HTTPException, Query, Request, Response, UploadFile, status
 from fastapi.concurrency import run_in_threadpool
@@ -10,7 +11,8 @@ from app.services.hf_service import hf_service
 from app.utils.image_validation import validate_image_upload
 
 router = APIRouter()
-_SEM = asyncio.Semaphore(2)
+_CONCURRENCY = int(os.environ.get("MAX_CONCURRENT_INFERENCE", "1"))
+_SEM = asyncio.Semaphore(_CONCURRENCY)
 
 
 @router.post("/remove-background")
