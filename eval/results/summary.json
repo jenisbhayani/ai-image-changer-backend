@@ -1,0 +1,582 @@
+{
+  "legacy": {
+    "records": [
+      {
+        "uncertain_ratio": 0.006163481423303521,
+        "component_count": 1.0,
+        "halo_score": 234.93214416503906,
+        "latency_ms": 16115.700800000923,
+        "peak_ram_mb": 160.59513187408447,
+        "category": "food",
+        "stem": "food_sample"
+      },
+      {
+        "uncertain_ratio": 0.010732959535229345,
+        "component_count": 1.0,
+        "halo_score": 58.52508544921875,
+        "latency_ms": 6142.423099998268,
+        "peak_ram_mb": 122.97156429290771,
+        "category": "full_body",
+        "stem": "full_body_sample"
+      },
+      {
+        "uncertain_ratio": 0.009251632393801347,
+        "component_count": 1.0,
+        "halo_score": 56.11317443847656,
+        "latency_ms": 6660.302100004628,
+        "peak_ram_mb": 170.45638751983643,
+        "category": "group",
+        "stem": "group_sample"
+      },
+      {
+        "uncertain_ratio": 0.025198547806233363,
+        "component_count": 1.0,
+        "halo_score": 35.33283615112305,
+        "latency_ms": 6195.986199993058,
+        "peak_ram_mb": 124.56361865997314,
+        "category": "hair_fine",
+        "stem": "hair_fine_sample"
+      },
+      {
+        "uncertain_ratio": 0.07230616406127464,
+        "component_count": 1.0,
+        "halo_score": 159.15707397460938,
+        "latency_ms": 7994.057999996585,
+        "peak_ram_mb": 128.04233646392822,
+        "category": "large_4k_photo",
+        "stem": "large_4k_photo_sample"
+      },
+      {
+        "uncertain_ratio": 0.01698604587199333,
+        "component_count": 1.0,
+        "halo_score": 101.0318374633789,
+        "latency_ms": 7454.560400001355,
+        "peak_ram_mb": 238.26477432250977,
+        "category": "low_contrast",
+        "stem": "low_contrast_sample"
+      },
+      {
+        "uncertain_ratio": 0.003655489521768369,
+        "component_count": 1.0,
+        "halo_score": 73.15042114257812,
+        "latency_ms": 6928.353700001026,
+        "peak_ram_mb": 173.0879774093628,
+        "category": "low_light",
+        "stem": "low_light_sample"
+      },
+      {
+        "uncertain_ratio": 0.017463168495696502,
+        "component_count": 1.0,
+        "halo_score": 18.29826545715332,
+        "latency_ms": 5876.286599988816,
+        "peak_ram_mb": 107.49736499786377,
+        "category": "pet_fur",
+        "stem": "pet_fur_sample"
+      },
+      {
+        "uncertain_ratio": 0.004075237195438396,
+        "component_count": 1.0,
+        "halo_score": 110.20960235595703,
+        "latency_ms": 6727.927999992971,
+        "peak_ram_mb": 123.55020236968994,
+        "category": "portrait_closeup",
+        "stem": "portrait_closeup_sample"
+      },
+      {
+        "uncertain_ratio": 0.016892510529207105,
+        "component_count": 1.0,
+        "halo_score": 127.42491149902344,
+        "latency_ms": 6542.101799990633,
+        "peak_ram_mb": 109.74482345581055,
+        "category": "poster_graphic_text",
+        "stem": "rang_morla"
+      },
+      {
+        "uncertain_ratio": 0.037500069764975746,
+        "component_count": 1.0,
+        "halo_score": 41.085418701171875,
+        "latency_ms": 6575.667700002668,
+        "peak_ram_mb": 123.14753913879395,
+        "category": "product_busy",
+        "stem": "product_busy_sample"
+      },
+      {
+        "uncertain_ratio": 0.019033362959266942,
+        "component_count": 1.0,
+        "halo_score": 233.74053955078125,
+        "latency_ms": 10057.557100008125,
+        "peak_ram_mb": 152.8188600540161,
+        "category": "product_clean",
+        "stem": "product_clean_sample"
+      },
+      {
+        "uncertain_ratio": 0.03008443020824922,
+        "component_count": 1.0,
+        "halo_score": 24.47628402709961,
+        "latency_ms": 5396.277100007865,
+        "peak_ram_mb": 126.09914779663086,
+        "category": "small_subject",
+        "stem": "small_subject_sample"
+      },
+      {
+        "uncertain_ratio": 0.02660582235403895,
+        "component_count": 2.0,
+        "halo_score": 104.95954132080078,
+        "latency_ms": 5762.145699991379,
+        "peak_ram_mb": 120.40329647064209,
+        "category": "transparent_glass",
+        "stem": "transparent_glass_sample"
+      },
+      {
+        "uncertain_ratio": 0.01918439789708987,
+        "component_count": 1.0,
+        "halo_score": 82.65538787841797,
+        "latency_ms": 5417.524500007858,
+        "peak_ram_mb": 115.46163272857666,
+        "category": "vehicle",
+        "stem": "vehicle_sample"
+      }
+    ],
+    "latency_p50_ms": 6575.667700002668,
+    "latency_p95_ms": 16115.700800000923,
+    "mean_uncertain_ratio": 0.02100888800117111,
+    "mean_halo_score": 97.40616823832194,
+    "mean_component_count": 1.0666666666666667,
+    "peak_ram_mb": 238.26477432250977
+  },
+  "fast": {
+    "records": [
+      {
+        "uncertain_ratio": 0.023881686087394292,
+        "component_count": 1.0,
+        "halo_score": 207.23098754882812,
+        "latency_ms": 5116.12380000588,
+        "peak_ram_mb": 117.30344676971436,
+        "category": "food",
+        "stem": "food_sample"
+      },
+      {
+        "uncertain_ratio": 0.0392506443006501,
+        "component_count": 2.0,
+        "halo_score": 65.04895782470703,
+        "latency_ms": 4447.843199988711,
+        "peak_ram_mb": 118.7041130065918,
+        "category": "full_body",
+        "stem": "full_body_sample"
+      },
+      {
+        "uncertain_ratio": 0.0113101052860089,
+        "component_count": 1.0,
+        "halo_score": 63.63349533081055,
+        "latency_ms": 5197.818600005121,
+        "peak_ram_mb": 168.6307258605957,
+        "category": "group",
+        "stem": "group_sample"
+      },
+      {
+        "uncertain_ratio": 0.0985912135586756,
+        "component_count": 1.0,
+        "halo_score": 37.70108413696289,
+        "latency_ms": 4666.226000001188,
+        "peak_ram_mb": 121.6810073852539,
+        "category": "hair_fine",
+        "stem": "hair_fine_sample"
+      },
+      {
+        "uncertain_ratio": 0.34825839729049496,
+        "component_count": 1.0,
+        "halo_score": 147.83433532714844,
+        "latency_ms": 4755.648799997289,
+        "peak_ram_mb": 124.28782749176025,
+        "category": "large_4k_photo",
+        "stem": "large_4k_photo_sample"
+      },
+      {
+        "uncertain_ratio": 0.026580256944639013,
+        "component_count": 1.0,
+        "halo_score": 100.35629272460938,
+        "latency_ms": 5928.542400011793,
+        "peak_ram_mb": 238.6050910949707,
+        "category": "low_contrast",
+        "stem": "low_contrast_sample"
+      },
+      {
+        "uncertain_ratio": 0.941358024691358,
+        "component_count": 1.0,
+        "halo_score": 65.1049575805664,
+        "latency_ms": 4407.281100007822,
+        "peak_ram_mb": 185.28851699829102,
+        "category": "low_light",
+        "stem": "low_light_sample"
+      },
+      {
+        "uncertain_ratio": 0.08507744814912051,
+        "component_count": 1.0,
+        "halo_score": 16.832298278808594,
+        "latency_ms": 4216.597899998305,
+        "peak_ram_mb": 103.02883338928223,
+        "category": "pet_fur",
+        "stem": "pet_fur_sample"
+      },
+      {
+        "uncertain_ratio": 0.007530821608115938,
+        "component_count": 1.0,
+        "halo_score": 103.54930114746094,
+        "latency_ms": 5338.691099997959,
+        "peak_ram_mb": 119.9227237701416,
+        "category": "portrait_closeup",
+        "stem": "portrait_closeup_sample"
+      },
+      {
+        "uncertain_ratio": 0.04109763608945904,
+        "component_count": 1.0,
+        "halo_score": 119.78507232666016,
+        "latency_ms": 4340.138500003377,
+        "peak_ram_mb": 102.2492847442627,
+        "category": "poster_graphic_text",
+        "stem": "rang_morla"
+      },
+      {
+        "uncertain_ratio": 0.02104812411476004,
+        "component_count": 1.0,
+        "halo_score": 82.60133361816406,
+        "latency_ms": 4646.001000000979,
+        "peak_ram_mb": 119.67457485198975,
+        "category": "product_busy",
+        "stem": "product_busy_sample"
+      },
+      {
+        "uncertain_ratio": 0.012921308655080543,
+        "component_count": 1.0,
+        "halo_score": 267.75848388671875,
+        "latency_ms": 4843.931099996553,
+        "peak_ram_mb": 150.10334873199463,
+        "category": "product_clean",
+        "stem": "product_clean_sample"
+      },
+      {
+        "uncertain_ratio": 0.07351141330743079,
+        "component_count": 1.0,
+        "halo_score": 21.109485626220703,
+        "latency_ms": 6388.472999999067,
+        "peak_ram_mb": 122.35636520385742,
+        "category": "small_subject",
+        "stem": "small_subject_sample"
+      },
+      {
+        "uncertain_ratio": 0.06244216731210802,
+        "component_count": 2.0,
+        "halo_score": 34.78397750854492,
+        "latency_ms": 6565.471800000523,
+        "peak_ram_mb": 123.30715751647949,
+        "category": "transparent_glass",
+        "stem": "transparent_glass_sample"
+      },
+      {
+        "uncertain_ratio": 0.06917031494332435,
+        "component_count": 1.0,
+        "halo_score": 97.31871032714844,
+        "latency_ms": 6140.900500002317,
+        "peak_ram_mb": 111.1972017288208,
+        "category": "vehicle",
+        "stem": "vehicle_sample"
+      }
+    ],
+    "latency_p50_ms": 4843.931099996553,
+    "latency_p95_ms": 6565.471800000523,
+    "mean_uncertain_ratio": 0.12413530415590802,
+    "mean_halo_score": 95.37658487955729,
+    "mean_component_count": 1.1333333333333333,
+    "peak_ram_mb": 238.6050910949707
+  },
+  "balanced": {
+    "records": [
+      {
+        "uncertain_ratio": 0.023881686087394292,
+        "component_count": 1.0,
+        "halo_score": 207.23098754882812,
+        "latency_ms": 5040.818299996317,
+        "peak_ram_mb": 117.29862308502197,
+        "category": "food",
+        "stem": "food_sample"
+      },
+      {
+        "uncertain_ratio": 0.0392506443006501,
+        "component_count": 2.0,
+        "halo_score": 65.04895782470703,
+        "latency_ms": 4960.506800009171,
+        "peak_ram_mb": 118.70411586761475,
+        "category": "full_body",
+        "stem": "full_body_sample"
+      },
+      {
+        "uncertain_ratio": 0.0113101052860089,
+        "component_count": 1.0,
+        "halo_score": 63.63349533081055,
+        "latency_ms": 5177.686799986986,
+        "peak_ram_mb": 168.63082885742188,
+        "category": "group",
+        "stem": "group_sample"
+      },
+      {
+        "uncertain_ratio": 0.0985912135586756,
+        "component_count": 1.0,
+        "halo_score": 37.70108413696289,
+        "latency_ms": 4490.048300009221,
+        "peak_ram_mb": 121.68112087249756,
+        "category": "hair_fine",
+        "stem": "hair_fine_sample"
+      },
+      {
+        "uncertain_ratio": 0.34825839729049496,
+        "component_count": 1.0,
+        "halo_score": 147.83433532714844,
+        "latency_ms": 4222.995500007528,
+        "peak_ram_mb": 124.2879409790039,
+        "category": "large_4k_photo",
+        "stem": "large_4k_photo_sample"
+      },
+      {
+        "uncertain_ratio": 0.026889414458521006,
+        "component_count": 1.0,
+        "halo_score": 101.09217834472656,
+        "latency_ms": 6135.890200006543,
+        "peak_ram_mb": 238.58627700805664,
+        "category": "low_contrast",
+        "stem": "low_contrast_sample"
+      },
+      {
+        "uncertain_ratio": 0.9299065420560748,
+        "component_count": 1.0,
+        "halo_score": 217.49136352539062,
+        "latency_ms": 5144.719899995835,
+        "peak_ram_mb": 185.290114402771,
+        "category": "low_light",
+        "stem": "low_light_sample"
+      },
+      {
+        "uncertain_ratio": 0.08507744814912051,
+        "component_count": 1.0,
+        "halo_score": 16.832298278808594,
+        "latency_ms": 5708.075899994583,
+        "peak_ram_mb": 103.02882862091064,
+        "category": "pet_fur",
+        "stem": "pet_fur_sample"
+      },
+      {
+        "uncertain_ratio": 0.007530821608115938,
+        "component_count": 1.0,
+        "halo_score": 103.54930114746094,
+        "latency_ms": 8825.439299995196,
+        "peak_ram_mb": 119.92277908325195,
+        "category": "portrait_closeup",
+        "stem": "portrait_closeup_sample"
+      },
+      {
+        "uncertain_ratio": 0.04109763608945904,
+        "component_count": 1.0,
+        "halo_score": 119.78507232666016,
+        "latency_ms": 6636.192600009963,
+        "peak_ram_mb": 102.24939727783203,
+        "category": "poster_graphic_text",
+        "stem": "rang_morla"
+      },
+      {
+        "uncertain_ratio": 0.02104812411476004,
+        "component_count": 1.0,
+        "halo_score": 82.60133361816406,
+        "latency_ms": 4685.188799994648,
+        "peak_ram_mb": 119.6747465133667,
+        "category": "product_busy",
+        "stem": "product_busy_sample"
+      },
+      {
+        "uncertain_ratio": 0.012921308655080543,
+        "component_count": 1.0,
+        "halo_score": 267.75848388671875,
+        "latency_ms": 4967.459000006784,
+        "peak_ram_mb": 150.10346031188965,
+        "category": "product_clean",
+        "stem": "product_clean_sample"
+      },
+      {
+        "uncertain_ratio": 0.07351141330743079,
+        "component_count": 1.0,
+        "halo_score": 21.109485626220703,
+        "latency_ms": 4317.857299989555,
+        "peak_ram_mb": 122.35647678375244,
+        "category": "small_subject",
+        "stem": "small_subject_sample"
+      },
+      {
+        "uncertain_ratio": 0.06244216731210802,
+        "component_count": 2.0,
+        "halo_score": 34.78397750854492,
+        "latency_ms": 4304.669399993145,
+        "peak_ram_mb": 123.30725955963135,
+        "category": "transparent_glass",
+        "stem": "transparent_glass_sample"
+      },
+      {
+        "uncertain_ratio": 0.06917031494332435,
+        "component_count": 1.0,
+        "halo_score": 97.31871032714844,
+        "latency_ms": 4557.920299994294,
+        "peak_ram_mb": 111.19731616973877,
+        "category": "vehicle",
+        "stem": "vehicle_sample"
+      }
+    ],
+    "latency_p50_ms": 4967.459000006784,
+    "latency_p95_ms": 8825.439299995196,
+    "mean_uncertain_ratio": 0.12339248248114792,
+    "mean_halo_score": 105.58473765055338,
+    "mean_component_count": 1.1333333333333333,
+    "peak_ram_mb": 238.58627700805664
+  },
+  "high": {
+    "records": [
+      {
+        "uncertain_ratio": 0.03544628520871271,
+        "component_count": 1.0,
+        "halo_score": 24.11721420288086,
+        "latency_ms": 8189.323300000979,
+        "peak_ram_mb": 118.03781032562256,
+        "category": "food",
+        "stem": "food_sample"
+      },
+      {
+        "uncertain_ratio": 0.06745484006481425,
+        "component_count": 2.0,
+        "halo_score": 73.70562744140625,
+        "latency_ms": 8093.822000009823,
+        "peak_ram_mb": 118.78859519958496,
+        "category": "full_body",
+        "stem": "full_body_sample"
+      },
+      {
+        "uncertain_ratio": 0.011278562770249488,
+        "component_count": 1.0,
+        "halo_score": 63.40943908691406,
+        "latency_ms": 8443.47289999132,
+        "peak_ram_mb": 168.63218688964844,
+        "category": "group",
+        "stem": "group_sample"
+      },
+      {
+        "uncertain_ratio": 0.10833800355253284,
+        "component_count": 1.0,
+        "halo_score": 41.227333068847656,
+        "latency_ms": 7870.19169999985,
+        "peak_ram_mb": 121.6847677230835,
+        "category": "hair_fine",
+        "stem": "hair_fine_sample"
+      },
+      {
+        "uncertain_ratio": 0.21400443022397245,
+        "component_count": 1.0,
+        "halo_score": 123.44391632080078,
+        "latency_ms": 7998.867799993604,
+        "peak_ram_mb": 124.27929210662842,
+        "category": "large_4k_photo",
+        "stem": "large_4k_photo_sample"
+      },
+      {
+        "uncertain_ratio": 0.03308984676108159,
+        "component_count": 1.0,
+        "halo_score": 98.4553451538086,
+        "latency_ms": 8165.201800002251,
+        "peak_ram_mb": 238.61706447601318,
+        "category": "low_contrast",
+        "stem": "low_contrast_sample"
+      },
+      {
+        "uncertain_ratio": 0.9980757197935166,
+        "component_count": 6.0,
+        "halo_score": 28.24497413635254,
+        "latency_ms": 8756.274500003201,
+        "peak_ram_mb": 172.02692413330078,
+        "category": "low_light",
+        "stem": "low_light_sample"
+      },
+      {
+        "uncertain_ratio": 0.05835246326524136,
+        "component_count": 1.0,
+        "halo_score": 12.648037910461426,
+        "latency_ms": 7935.08519999159,
+        "peak_ram_mb": 103.05398941040039,
+        "category": "pet_fur",
+        "stem": "pet_fur_sample"
+      },
+      {
+        "uncertain_ratio": 0.00751572474495435,
+        "component_count": 1.0,
+        "halo_score": 103.22235107421875,
+        "latency_ms": 7846.511600000667,
+        "peak_ram_mb": 119.92328262329102,
+        "category": "portrait_closeup",
+        "stem": "portrait_closeup_sample"
+      },
+      {
+        "uncertain_ratio": 0.05039175028180971,
+        "component_count": 1.0,
+        "halo_score": 119.41253662109375,
+        "latency_ms": 7444.39269999566,
+        "peak_ram_mb": 102.14988708496094,
+        "category": "poster_graphic_text",
+        "stem": "rang_morla"
+      },
+      {
+        "uncertain_ratio": 0.024388212760388783,
+        "component_count": 1.0,
+        "halo_score": 81.16053771972656,
+        "latency_ms": 7859.0202999912435,
+        "peak_ram_mb": 119.6361141204834,
+        "category": "product_busy",
+        "stem": "product_busy_sample"
+      },
+      {
+        "uncertain_ratio": 0.013013874144305744,
+        "component_count": 1.0,
+        "halo_score": 266.3109130859375,
+        "latency_ms": 8234.915299995919,
+        "peak_ram_mb": 150.10418701171875,
+        "category": "product_clean",
+        "stem": "product_clean_sample"
+      },
+      {
+        "uncertain_ratio": 0.09931337288056424,
+        "component_count": 1.0,
+        "halo_score": 24.486818313598633,
+        "latency_ms": 7668.4840000089025,
+        "peak_ram_mb": 122.28897380828857,
+        "category": "small_subject",
+        "stem": "small_subject_sample"
+      },
+      {
+        "uncertain_ratio": 0.061671193481386805,
+        "component_count": 2.0,
+        "halo_score": 34.98931121826172,
+        "latency_ms": 7793.840700003784,
+        "peak_ram_mb": 123.30608749389648,
+        "category": "transparent_glass",
+        "stem": "transparent_glass_sample"
+      },
+      {
+        "uncertain_ratio": 0.09057369394631741,
+        "component_count": 1.0,
+        "halo_score": 91.4620361328125,
+        "latency_ms": 8102.014900010545,
+        "peak_ram_mb": 111.24379348754883,
+        "category": "vehicle",
+        "stem": "vehicle_sample"
+      }
+    ],
+    "latency_p50_ms": 7998.867799993604,
+    "latency_p95_ms": 8756.274500003201,
+    "mean_uncertain_ratio": 0.12486053159198988,
+    "mean_halo_score": 79.08642609914143,
+    "mean_component_count": 1.4666666666666666,
+    "peak_ram_mb": 238.61706447601318
+  }
+}

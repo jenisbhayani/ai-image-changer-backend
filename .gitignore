@@ -7,3 +7,11 @@ __pycache__/
 venv/
 .venv/
 .DS_Store
+.pytest_cache/
+.mypy_cache/
+
+# Large model weight binaries (download instructions in app/models/weights/README.md)
+*.onnx
+*.tflite
+*.pt
+*.bin
